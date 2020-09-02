@@ -11,6 +11,6 @@ void main() {
 
   String a = "dart";
   String b = "Java";
-  String c = a ?? b;
+  String c = a ?? b;  // a == null  c = b   a != null  c = a
   print('c = $c');
 }
