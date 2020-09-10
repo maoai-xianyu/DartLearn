@@ -4,6 +4,7 @@
  */
 
 void main() {
+  // 把方法当做对象赋值给 func
   var func = printHello;
   func();
 
@@ -12,12 +13,13 @@ void main() {
 
   var list = [1, 2, 3];
   list.forEach(print);
-
-
-  var listm = ["h","e","1","1","o"];
-
+  var listm = ["h", "e", "1", "1", "o"];
   print(listTimes(listm, times));
 
+  var listm2 = ["h", "2", "x", "z"];
+  print(listTimes2(listm2, (String str) {
+    return str * 3;
+  }));
 }
 
 void printHello() {
@@ -29,6 +31,14 @@ List listTimes(List list, String f(str)) {
     list[index] = f(list[index]);
   }
   return list;
+}
+
+List listTimes2(List list, String f(String str)) {
+  List newList = new List();
+  for (var item in list) {
+    newList.add(f(item));
+  }
+  return newList;
 }
 
 String times(str) {

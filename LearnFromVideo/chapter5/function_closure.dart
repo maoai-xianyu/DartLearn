@@ -12,7 +12,6 @@ void main() {
   funb();
   funb();
   funb();
-
 }
 
 a() {
