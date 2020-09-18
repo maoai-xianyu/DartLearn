@@ -1,0 +1,5 @@
+name: flutter_learn
+description: A new Flutter application.
+dependencies:
+  http: ^0.12.2
+  date_format: ^1.0.9
