@@ -40,4 +40,7 @@ void main() {
   list4.clear();
   print('list4 clear = $list4');
   print(list4.isEmpty);
+
+  var listG = List.generate(100, (i) => "imte $i");
+  var listGo = new List<int>.of([1, 2, 3], growable: false);
 }
