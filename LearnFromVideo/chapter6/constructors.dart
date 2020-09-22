@@ -1,3 +1,5 @@
+import 'package:date_format/date_format.dart';
+
 void main() {
   var person = Person("zhang", 18, "male");
   person.work();
@@ -5,12 +7,15 @@ void main() {
   var person2 = Person.withName("zhang", "male");
   person2.work();
 
-
   // 可以使用可变参数
   var pStage = PersonStage();
   pStage.work();
   var pStage1 = PersonStage.withNullParam();
   pStage1.work();
+
+  var p1 = PersonMap.fromMap({"name": "lilei", "age": 18, "height": 1.88});
+
+  print("P1  $p1");
 }
 
 class Person {
@@ -58,5 +63,28 @@ class PersonStage {
 
   void work() {
     print("PersonStage .....$name  $age");
+  }
+}
+
+class PersonMap {
+  String name;
+  int age;
+  double height;
+
+  PersonMap(this.name, this.age);
+
+  //PersonMap(this.name,this.age,{this.height});
+
+  PersonMap.withNameAgeHeight(this.name, this.age, this.height);
+
+  PersonMap.fromMap(Map<String, dynamic> map) {
+    this.name = map['name'];
+    this.age = map['age'];
+    this.height = map['height'];
+  }
+
+  @override
+  String toString() {
+    return "$name $age $height";
   }
 }

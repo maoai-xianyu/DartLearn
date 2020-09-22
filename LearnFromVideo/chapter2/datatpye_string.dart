@@ -6,6 +6,8 @@ void main() {
   String str1 = 'hello';
   print('str1 $str1');
 
+  print('str1 ${str1.runtimeType}');
+
   // 可以字符串，多行的。可以用 """ """
   String str2 = ''' hello 
   dart''';

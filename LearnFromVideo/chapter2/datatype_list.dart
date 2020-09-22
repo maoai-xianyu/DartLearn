@@ -43,4 +43,17 @@ void main() {
 
   var listG = List.generate(100, (i) => "imte $i");
   var listGo = new List<int>.of([1, 2, 3], growable: false);
+
+  // list 集合
+  var names = ["abc","sjss","jsjjj","sjjssds","abc"];
+  print(names);
+  names.add("value");
+  // set 集合
+  var sets = {"aaaa","nnnn","ssss"};
+  print(sets);
+
+  print("list pre $names");
+  // set集合可以用于list集合的去重
+  var list = Set.of(names).toList();
+  print("list pre $list");
 }

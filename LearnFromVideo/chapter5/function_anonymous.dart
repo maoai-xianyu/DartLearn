@@ -31,6 +31,16 @@ void main() {
   var listmm = ["h", "e", "1", "1", "o"];
 
   print(listTimesM(listmm));
+
+
+  // 匿名函数返回值
+  testBar((){
+    print('匿名函数被调用');
+    return 10;
+  });
+
+  // 箭头函数不能有多行
+  testBar(()=> print("箭头函数被调用"));
 }
 
 List listTimes(List list, String f(str)) {
@@ -48,4 +58,10 @@ List listTimesM(List list) {
     list[index] = func(list[index]);
   }
   return list;
+}
+
+
+void testBar(Function func){
+  var result = func();
+  return result;
 }

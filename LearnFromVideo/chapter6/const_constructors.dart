@@ -1,7 +1,15 @@
 void main() {
-  const person = const Person("z", 12, "male");
+  const person = Person("z", 12, "male");
   // 常量能不能被赋值
   // person = Person("mm", 12, "famale");
+
+  const person1 = Person("z", 12, "male");
+
+  print(identical(person, person1));
+
+  final p1 = Person("z", 12, "male");
+  final p2 = Person("z", 12, "male");
+  print(identical(p1, p2));
 }
 
 class Person {

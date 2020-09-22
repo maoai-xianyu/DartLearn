@@ -5,6 +5,10 @@
 /**
  * main 是程序入口
  */
-void main() {
+void main(List<String> args) {
   print('Hello,world');
 }
+
+/*void main() {
+  print('Hello,world');
+}*/

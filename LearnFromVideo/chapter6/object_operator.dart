@@ -17,7 +17,7 @@ void main() {
   var p = new Person();
   p.name = "sss";
   p.age = 12;
-  // -- 转换
+  // -- 转换 级联运算符
   new Person()..name = "sss"
     ..age = 20
     ..work();
