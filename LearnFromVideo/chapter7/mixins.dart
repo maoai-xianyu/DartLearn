@@ -3,6 +3,11 @@ void main() {
   d.a();
   d.b();
   d.c();
+
+  var super2 = SuperMain();
+  super2.fly();
+  super2.a();
+  super2.run();
 }
 
 class A {
@@ -36,3 +41,30 @@ class C {
 }
 
 class D extends A with B, C {}
+
+mixin Runner {
+  run() {
+    print('在奔跑');
+  }
+}
+
+mixin Flyer {
+  fly() {
+    print('在飞翔');
+  }
+}
+
+// implements的方式要求必须对其中的方法进行重新实现
+/*class SuperMan implements Runner, Flyer {
+  @override
+  fly() {}
+
+  @override
+  run() {}
+}*/
+
+class SuperMain extends A with Runner, Flyer {
+
+}
+
+

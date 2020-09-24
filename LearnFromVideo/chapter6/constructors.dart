@@ -12,10 +12,13 @@ void main() {
   pStage.work();
   var pStage1 = PersonStage.withNullParam();
   pStage1.work();
-
+  // 扩展构造函数
   var p1 = PersonMap.fromMap({"name": "lilei", "age": 18, "height": 1.88});
-
   print("P1  $p1");
+  // 重定向构造函数
+
+  var pR = PersonR("zhang");
+  print(pR);
 }
 
 class Person {
@@ -74,7 +77,6 @@ class PersonMap {
   PersonMap(this.name, this.age);
 
   //PersonMap(this.name,this.age,{this.height});
-
   PersonMap.withNameAgeHeight(this.name, this.age, this.height);
 
   PersonMap.fromMap(Map<String, dynamic> map) {
@@ -86,5 +88,23 @@ class PersonMap {
   @override
   String toString() {
     return "$name $age $height";
+  }
+}
+
+class PersonR {
+  String name;
+  int age;
+
+  //PersonR(this.name);
+  // 为age 赋初始值
+  //PersonR(this.name) : age = 0;
+  // 构造函数的重定向
+  PersonR(String name) : this._internal(name, 0);
+
+  PersonR._internal(this.name, this.age);
+
+  @override
+  String toString() {
+    return "PersonR $name $age";
   }
 }
